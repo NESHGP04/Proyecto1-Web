@@ -5,7 +5,7 @@ let previous = ''
 let operator = ''
 let resetDisplay = false
 
-//Actualiza el display
+// Actualiza el display
 // Se encarga de mostrar el resultado en el display y de manejar el caso de error
 function updateDisplay (text) {
   if (text.toString().length > 9) {
@@ -35,7 +35,7 @@ function append (char) {
   updateDisplay(current)
 }
 
-//Gestiona las operaciones
+// Gestiona las operaciones
 function setOperator (op) {
   if (display.value === 'ERROR') return
 
@@ -95,8 +95,8 @@ function operate () {
   resetDisplay = true
 }
 
-//Calcula al prsionar el igual
-function calculate () { 
+// Calcula al prsionar el igual
+function calculate () {
   if (operator && current !== '') {
     operate()
   }

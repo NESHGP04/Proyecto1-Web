@@ -1,5 +1,4 @@
-//Versión testeable de mi lógica
-
+// Versión testeable de mi lógica
 function createCalculator () {
   let current = ''
   let previous = ''
@@ -7,7 +6,6 @@ function createCalculator () {
   let resetDisplay = false
 
   const MAX_LEN = 9
-  const MAX_VAL = 999999999
 
   function getDisplay () {
     return current
@@ -25,16 +23,6 @@ function createCalculator () {
     current += char
     return current
   }
-
-  // function setOperator (op) {
-  //   if (operator && current !== '') {
-  //     operate()
-  //   }
-
-  //   operator = op
-  //   previous = current
-  //   current = ''
-  // }
 
   function setOperator (op) {
     if (operator && current !== '') {
@@ -57,28 +45,27 @@ function createCalculator () {
   }
 
   function operate () {
-  const a = parseFloat(previous)
-  const b = parseFloat(current)
-  let result = 0
+    const a = parseFloat(previous)
+    const b = parseFloat(current)
+    let result = 0
 
-  if (isNaN(a) || isNaN(b)) return 'ERROR'
+    if (isNaN(a) || isNaN(b)) return 'ERROR'
 
-  switch (operator) {
-    case '+': result = a + b; break
-    case '-': result = a - b; break
-    case '*': result = a * b; break
-    case '/': result = b === 0 ? 'ERROR' : a / b; break
-    case '%': result = b === 0 ? 'ERROR' : a % b; break
-    default: return 'ERROR'
+    switch (operator) {
+      case '+': result = a + b; break
+      case '-': result = a - b; break
+      case '*': result = a * b; break
+      case '/': result = b === 0 ? 'ERROR' : a / b; break
+      case '%': result = b === 0 ? 'ERROR' : a % b; break
+      default: return 'ERROR'
+    }
+
+    if (typeof result !== 'number' || result < 0 || result > 999999999) {
+      return 'ERROR'
+    }
+
+    return result.toString()
   }
-
-  if (typeof result !== 'number' || result < 0 || result > 999999999) {
-    return 'ERROR'
-  }
-
-  return result.toString()
-}
-
 
   function calculate () {
     return operate()
