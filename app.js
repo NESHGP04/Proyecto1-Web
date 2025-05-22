@@ -5,6 +5,8 @@ let previous = ''
 let operator = ''
 let resetDisplay = false
 
+//Actualiza el display
+// Se encarga de mostrar el resultado en el display y de manejar el caso de error
 function updateDisplay (text) {
   if (text.toString().length > 9) {
     display.value = 'ERROR'
@@ -17,6 +19,7 @@ function updateDisplay (text) {
   display.value = text
 }
 
+// Agregar evento de teclado
 function append (char) {
   if (display.value === 'ERROR') return
 
@@ -32,11 +35,12 @@ function append (char) {
   updateDisplay(current)
 }
 
+//Gestiona las operaciones
 function setOperator (op) {
   if (display.value === 'ERROR') return
 
   if (operator && current !== '') {
-    operate()
+    operate() // Si se presiona una operación nuevamente, y para cada operación subsiguiente, se debe mostrar el resultado al momento de presionar la operación
   }
 
   operator = op
@@ -91,7 +95,8 @@ function operate () {
   resetDisplay = true
 }
 
-function calculate () {
+//Calcula al prsionar el igual
+function calculate () { 
   if (operator && current !== '') {
     operate()
   }

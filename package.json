@@ -1,0 +1,26 @@
+{
+  "name": "proyecto1-web",
+  "version": "1.0.0",
+  "description": "Proyecto 1 Web",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NESHGP04/Proyecto1-Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NESHGP04/Proyecto1-Web/issues"
+  },
+  "homepage": "https://github.com/NESHGP04/Proyecto1-Web#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
